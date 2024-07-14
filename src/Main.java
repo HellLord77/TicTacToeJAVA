@@ -13,6 +13,11 @@ public class Main {
             };
             players[index] = player;
         }
-        new Game(players[0], players[1]).play();
+        boolean retry = true;
+        while (retry) {
+            new Game(players[0], players[1]).play();
+            retry = Util.getInput("[Yes, No] Retry?", new int[] { 1, 2 }) == 1;
+        }
+
     }
 }
